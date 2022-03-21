@@ -28,7 +28,7 @@ Requires:  %{name} = %{version}-%{release}
 }
 
 Name: %{goname}
-Release: 1%{?dist}
+Release: %autorelease
 Summary: Podman Terminal User Interface
 License: ASL 2.0
 URL: %{gourl}
