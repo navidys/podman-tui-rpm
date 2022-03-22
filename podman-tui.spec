@@ -95,7 +95,6 @@ BuildRequires: golang-github-fsnotify-devel
 BuildRequires: golang-github-docker-metrics-devel
 BuildRequires: golang-github-docker-connections-devel
 BuildRequires: golang-github-cyphar-filepath-securejoin-devel
-BuildRequires: compat-golang-github-coreos-systemd-v22-devel
 BuildRequires: golang-github-beorn7-perks-devel
 BuildRequires: golang-github-acarl005-stripansi-devel
 BuildRequires: golang-github-containerd-cgroups-devel
@@ -150,6 +149,7 @@ Provides: bundled(golang(github.com/ostreedev/ostree_go)) = v0.0.0_2019070214023
 Provides: bundled(golang(github.com/rivo/tview)) = v0.0.0_20220106183741_90d72bc664f5
 Provides: bundled(golang(github.com/vbauerster/mpb/v7)) = v7.1.5
 Provides: bundled(golang(github.com/VividCortex/ewma)) = v1.2.0
+Provides: bundled(golang(github.com/beorn7/perks)) = v1.0.1
 
 %description
 %{common_description}
@@ -177,6 +177,7 @@ install -m 0755 -vd %{gobuilddir}/src/github.com/cri-o
 install -m 0755 -vd %{gobuilddir}/src/github.com/containerd/stargz-snapshotter
 install -m 0755 -vd %{gobuilddir}/src/github.com/google
 install -m 0755 -vd %{gobuilddir}/src/github.com/gdamore
+install -m 0755 -vd %{gobuilddir}/src/github.com/beorn7
 
 # copy required bundled libraries
 /bin/cp -rp %{goname}-%{version}/vendor/github.com/VividCortex %{gobuilddir}/src/github.com/
@@ -203,6 +204,7 @@ install -m 0755 -vd %{gobuilddir}/src/github.com/gdamore
 /bin/cp -rp %{goname}-%{version}/vendor/github.com/containers/podman %{gobuilddir}/src/github.com/containers/
 /bin/cp -rp %{goname}-%{version}/vendor/github.com/cri-o/ocicni %{gobuilddir}/src/github.com/cri-o/
 /bin/cp -rp %{goname}-%{version}/vendor/github.com/containerd/containerd %{gobuilddir}/src/github.com/containerd/
+/bin/cp -rp %{goname}-%{version}/vendor/github.com/beorn7/perks %{gobuilddir}/src/github.com/beorn7/
 
 popd
 /bin/rm -rf _depbundle
