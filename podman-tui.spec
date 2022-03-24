@@ -180,31 +180,31 @@ pushd _depbundle
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/beorn7
 
 # copy required bundled libraries
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/VividCortex %{gobuilddir}/src/github.com/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/vbauerster/mpb/v7 %{gobuilddir}/src/github.com/vbauerster/mpb/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/rivo/tview %{gobuilddir}/src/github.com/rivo/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/ostreedev/ostree-go %{gobuilddir}/src/github.com/ostreedev/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/navidys/tvxwidgets %{gobuilddir}/src/github.com/navidys/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/navidys/vtterm %{gobuilddir}/src/github.com/navidys/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/mtrmac/gpgme %{gobuilddir}/src/github.com/mtrmac/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/Microsoft/hcsshim %{gobuilddir}/src/github.com/Microsoft/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/Microsoft/go-winio %{gobuilddir}/src/github.com/Microsoft/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/mattn/go-runewidth %{gobuilddir}/src/github.com/mattn/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/jinzhu/copier %{gobuilddir}/src/github.com/jinzhu/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/google/go-intervals %{gobuilddir}/src/github.com/google/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/gdamore/tcell %{gobuilddir}/src/github.com/gdamore/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/disiqueira/gotree/v3 %{gobuilddir}/src/github.com/disiqueira/gotree/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/containers/storage %{gobuilddir}/src/github.com/containers/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/containers/psgo %{gobuilddir}/src/github.com/containers/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/containers/ocicrypt %{gobuilddir}/src/github.com/containers/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/containers/libtrust %{gobuilddir}/src/github.com/containers/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/containers/image %{gobuilddir}/src/github.com/containers/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/containers/common %{gobuilddir}/src/github.com/containers/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/containers/buildah %{gobuilddir}/src/github.com/containers/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/containers/podman %{gobuilddir}/src/github.com/containers/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/cri-o/ocicni %{gobuilddir}/src/github.com/cri-o/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/containerd/containerd %{gobuilddir}/src/github.com/containerd/
-%{_bindir}/cp -rp %{goname}-%{version}/vendor/github.com/beorn7/perks %{gobuilddir}/src/github.com/beorn7/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/VividCortex %{gobuilddir}/src/github.com/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/vbauerster/mpb/v7 %{gobuilddir}/src/github.com/vbauerster/mpb/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/rivo/tview %{gobuilddir}/src/github.com/rivo/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/ostreedev/ostree-go %{gobuilddir}/src/github.com/ostreedev/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/navidys/tvxwidgets %{gobuilddir}/src/github.com/navidys/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/navidys/vtterm %{gobuilddir}/src/github.com/navidys/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/mtrmac/gpgme %{gobuilddir}/src/github.com/mtrmac/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/Microsoft/hcsshim %{gobuilddir}/src/github.com/Microsoft/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/Microsoft/go-winio %{gobuilddir}/src/github.com/Microsoft/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/mattn/go-runewidth %{gobuilddir}/src/github.com/mattn/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/jinzhu/copier %{gobuilddir}/src/github.com/jinzhu/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/google/go-intervals %{gobuilddir}/src/github.com/google/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/gdamore/tcell %{gobuilddir}/src/github.com/gdamore/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/disiqueira/gotree/v3 %{gobuilddir}/src/github.com/disiqueira/gotree/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/containers/storage %{gobuilddir}/src/github.com/containers/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/containers/psgo %{gobuilddir}/src/github.com/containers/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/containers/ocicrypt %{gobuilddir}/src/github.com/containers/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/containers/libtrust %{gobuilddir}/src/github.com/containers/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/containers/image %{gobuilddir}/src/github.com/containers/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/containers/common %{gobuilddir}/src/github.com/containers/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/containers/buildah %{gobuilddir}/src/github.com/containers/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/containers/podman %{gobuilddir}/src/github.com/containers/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/cri-o/ocicni %{gobuilddir}/src/github.com/cri-o/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/containerd/containerd %{gobuilddir}/src/github.com/containerd/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/beorn7/perks %{gobuilddir}/src/github.com/beorn7/
 
 popd
 %{_bindir}/rm -rf _depbundle
