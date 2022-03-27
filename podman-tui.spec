@@ -9,15 +9,16 @@
 %endif
 
 %global goipath github.com/containers/podman-tui
-Version: 0.2.0
-%global tag v0.2.0
+Version: 0.3.0
+%global tag v0.3.0
 %gometa
 
 %global goname podman-tui
 
 %global common_description %{expand:
-%{goname} is a terminal user interface for Podman v3 (>= 3.1).
-it is using podman.socket service to communicate with podman machine.
+%{goname} is a terminal user interface for Podman v4.
+%{goname} is using podman.socket service to communicate with podman environment
+and SSH to connect to remote podman machines.
 }
 
 %global golicenses LICENSE
@@ -70,8 +71,6 @@ BuildRequires: golang-github-klauspost-compress-devel
 BuildRequires: golang-github-xeipuuv-gojsonschema-devel
 BuildRequires: golang-github-xeipuuv-gojsonreference-devel
 BuildRequires: golang-github-xeipuuv-gojsonpointer-devel
-BuildRequires: golang-github-vishvananda-netlink-devel
-BuildRequires: golang-github-vishvananda-netns-devel
 BuildRequires: golang-github-ulikunitz-xz-devel
 BuildRequires: golang-github-syndtr-gocapability-devel
 BuildRequires: golang-github-miekg-pkcs11-devel
@@ -98,8 +97,6 @@ BuildRequires: golang-github-cyphar-filepath-securejoin-devel
 BuildRequires: golang-github-beorn7-perks-devel
 BuildRequires: golang-github-acarl005-stripansi-devel
 BuildRequires: golang-github-containerd-cgroups-devel
-BuildRequires: golang-github-containernetworking-plugins-devel
-BuildRequires: golang-github-containernetworking-cni-devel
 BuildRequires: golang-gopkg-square-jose-2-devel
 BuildRequires: golang-github-vbatts-tar-split
 BuildRequires: golang-github-tchap-patricia-devel
@@ -126,30 +123,30 @@ BuildRequires: golang-github-opencontainers-runtime-tools-devel
 BuildRequires: golang-github-containerd-stargz-snapshotter-estargz-devel
 
 # bundled libraries - not available in fedora packages
-Provides: bundled(golang(github.com/containerd/containerd)) = v1.5.7
-Provides: bundled(golang(github.com/containers/buildah)) = v1.23.1
-Provides: bundled(golang(github.com/containers/common)) = v0.44.4
-Provides: bundled(golang(github.com/containers/image/v5)) = v5.17.0
+Provides: bundled(golang(github.com/containerd/containerd)) = v1.5.9
+Provides: bundled(golang(github.com/containers/buildah)) = v1.24.1
+Provides: bundled(golang(github.com/containers/common)) = v0.47.5
+Provides: bundled(golang(github.com/containers/image/v5)) = v5.19.1
 Provides: bundled(golang(github.com/containers/libtrust)) = v0.0.0_20190913040956_14b96171aa3b
 Provides: bundled(golang(github.com/containers/ocicrypt)) = v1.1.2
-Provides: bundled(golang(github.com/containers/podman/v3)) = v3.4.4
-Provides: bundled(golang(github.com/containers/psgo)) = v1.7.1
-Provides: bundled(golang(github.com/containers/storage)) = v1.37.0
-Provides: bundled(golang(github.com/cri_o/ocicni)) = v0.2.1_0.20210621164014_d0acc7862283
+Provides: bundled(golang(github.com/containers/podman/v4)) = v4.0.2
+Provides: bundled(golang(github.com/containers/psgo)) = v1.7.2
+Provides: bundled(golang(github.com/containers/storage)) = v1.38.2
 Provides: bundled(golang(github.com/disiqueira/gotree/v3)) = v3.0.2
 Provides: bundled(golang(github.com/gdamore/tcell/v2)) = v2.4.1_0.20210905002822_f057f0a857a1
 Provides: bundled(golang(github.com/google/go_intervals)) = v0.0.2
-Provides: bundled(golang(github.com/jinzhu/copier)) = v0.3.2
+Provides: bundled(golang(github.com/jinzhu/copier)) = v0.3.5
 Provides: bundled(golang(github.com/mattn/go_runewidth)) = v0.0.13
-Provides: bundled(golang(github.com/Microsoft/hcsshim)) = v0.8.22
-Provides: bundled(golang(github.com/mtrmac/gpgme)) = v0.1.2
+Provides: bundled(golang(github.com/Microsoft/hcsshim)) = v0.9.2
 Provides: bundled(golang(github.com/navidys/tvxwidgets)) = v0.1.0
 Provides: bundled(golang(github.com/navidys/vtterm)) = v0.1.0
 Provides: bundled(golang(github.com/ostreedev/ostree_go)) = v0.0.0_20190702140239_759a8c1ac913
-Provides: bundled(golang(github.com/rivo/tview)) = v0.0.0_20220106183741_90d72bc664f5
-Provides: bundled(golang(github.com/vbauerster/mpb/v7)) = v7.1.5
+Provides: bundled(golang(github.com/rivo/tview)) = v0.0.0_20220307222120_9994674d60a8
+Provides: bundled(golang(github.com/vbauerster/mpb/v7)) = v7.3.2
 Provides: bundled(golang(github.com/VividCortex/ewma)) = v1.2.0
 Provides: bundled(golang(github.com/beorn7/perks)) = v1.0.1
+Provides: bundled(golang(github.com/proglottis/gpgme)) = v0.1.1
+Provides: bundled(golang(github.com/sylabs/sif/v2)) = v2.3.1
 
 %description
 %{common_description}
@@ -167,17 +164,17 @@ pushd _depbundle
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/ostreedev
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/disiqueira/gotree
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/navidys
-%{__install} -m 0755 -vd %{gobuilddir}/src/github.com/mtrmac
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/Microsoft
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/mattn
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/jinzhu
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/disiqueira/gotree
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/containers
-%{__install} -m 0755 -vd %{gobuilddir}/src/github.com/cri-o
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/containerd/stargz-snapshotter
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/google
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/gdamore
 %{__install} -m 0755 -vd %{gobuilddir}/src/github.com/beorn7
+%{__install} -m 0755 -vd %{gobuilddir}/src/github.com/proglottis
+%{__install} -m 0755 -vd %{gobuilddir}/src/github.com/sylabs
 
 # copy required bundled libraries
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/VividCortex %{gobuilddir}/src/github.com/
@@ -186,7 +183,6 @@ pushd _depbundle
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/ostreedev/ostree-go %{gobuilddir}/src/github.com/ostreedev/
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/navidys/tvxwidgets %{gobuilddir}/src/github.com/navidys/
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/navidys/vtterm %{gobuilddir}/src/github.com/navidys/
-%{__cp} -rp %{goname}-%{version}/vendor/github.com/mtrmac/gpgme %{gobuilddir}/src/github.com/mtrmac/
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/Microsoft/hcsshim %{gobuilddir}/src/github.com/Microsoft/
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/Microsoft/go-winio %{gobuilddir}/src/github.com/Microsoft/
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/mattn/go-runewidth %{gobuilddir}/src/github.com/mattn/
@@ -202,9 +198,10 @@ pushd _depbundle
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/containers/common %{gobuilddir}/src/github.com/containers/
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/containers/buildah %{gobuilddir}/src/github.com/containers/
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/containers/podman %{gobuilddir}/src/github.com/containers/
-%{__cp} -rp %{goname}-%{version}/vendor/github.com/cri-o/ocicni %{gobuilddir}/src/github.com/cri-o/
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/containerd/containerd %{gobuilddir}/src/github.com/containerd/
 %{__cp} -rp %{goname}-%{version}/vendor/github.com/beorn7/perks %{gobuilddir}/src/github.com/beorn7/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/proglottis/gpgme %{gobuilddir}/src/github.com/proglottis/
+%{__cp} -rp %{goname}-%{version}/vendor/github.com/sylabs/sif %{gobuilddir}/src/github.com/sylabs/
 
 popd
 %{_bindir}/rm -rf _depbundle
