@@ -9,8 +9,8 @@
 %endif
 
 %global goipath github.com/containers/podman-tui
-Version: 0.2.0
-%global tag v0.2.0
+Version: 0.2.1
+%global tag v0.2.1
 %gometa
 
 %global goname podman-tui
@@ -57,12 +57,12 @@ Provides: bundled(golang(github.com/acarl005/stripansi)) = v0.0.0_20180116102854
 Provides: bundled(golang(github.com/Azure/go_ansiterm)) = v0.0.0_20210617225240_d185dfc1b5a1
 Provides: bundled(golang(github.com/beorn7/perks)) = v1.0.1
 Provides: bundled(golang(github.com/blang/semver)) = v3.5.1+incompatible
-Provides: bundled(golang(github.com/BurntSushi/toml)) = v0.4.1
+Provides: bundled(golang(github.com/BurntSushi/toml)) = v1.0.0
 Provides: bundled(golang(github.com/cespare/xxhash/v2)) = v2.1.2
 Provides: bundled(golang(github.com/chzyer/readline)) = v0.0.0_20180603132655_2972be24d48e
 Provides: bundled(golang(github.com/containerd/cgroups)) = v1.0.1
 Provides: bundled(golang(github.com/containerd/containerd)) = v1.5.7
-Provides: bundled(golang(github.com/containerd/stargz_snapshotter/estargz)) = v0.9.0
+Provides: bundled(golang(github.com/containerd/stargz_snapshotter/estargz)) = v0.10.1
 Provides: bundled(golang(github.com/containernetworking/cni)) = v0.8.1
 Provides: bundled(golang(github.com/containernetworking/plugins)) = v0.9.1
 Provides: bundled(golang(github.com/containers/buildah)) = v1.23.1
@@ -71,8 +71,8 @@ Provides: bundled(golang(github.com/containers/image/v5)) = v5.17.0
 Provides: bundled(golang(github.com/containers/libtrust)) = v0.0.0_20190913040956_14b96171aa3b
 Provides: bundled(golang(github.com/containers/ocicrypt)) = v1.1.2
 Provides: bundled(golang(github.com/containers/podman/v3)) = v3.4.4
-Provides: bundled(golang(github.com/containers/psgo)) = v1.7.1
-Provides: bundled(golang(github.com/containers/storage)) = v1.37.0
+Provides: bundled(golang(github.com/containers/psgo)) = v1.7.2
+Provides: bundled(golang(github.com/containers/storage)) = v1.38.0
 Provides: bundled(golang(github.com/coreos/go_systemd/v22)) = v22.3.2
 Provides: bundled(golang(github.com/cri_o/ocicni)) = v0.2.1_0.20210621164014_d0acc7862283
 Provides: bundled(golang(github.com/cyphar/filepath_securejoin)) = v0.2.3
@@ -102,18 +102,18 @@ Provides: bundled(golang(github.com/imdario/mergo)) = v0.3.12
 Provides: bundled(golang(github.com/inconshreveable/mousetrap)) = v1.0.0
 Provides: bundled(golang(github.com/jinzhu/copier)) = v0.3.2
 Provides: bundled(golang(github.com/json_iterator/go)) = v1.1.12
-Provides: bundled(golang(github.com/klauspost/compress)) = v1.13.6
+Provides: bundled(golang(github.com/klauspost/compress)) = v1.14.1
 Provides: bundled(golang(github.com/klauspost/pgzip)) = v1.2.5
 Provides: bundled(golang(github.com/lucasb_eyer/go_colorful)) = v1.2.0
 Provides: bundled(golang(github.com/manifoldco/promptui)) = v0.9.0
 Provides: bundled(golang(github.com/mattn/go_runewidth)) = v0.0.13
 Provides: bundled(golang(github.com/mattn/go_shellwords)) = v1.0.12
 Provides: bundled(golang(github.com/matttproud/golang_protobuf_extensions)) = v1.0.2_0.20181231171920_c182affec369
-Provides: bundled(golang(github.com/Microsoft/go_winio)) = v0.5.0
-Provides: bundled(golang(github.com/Microsoft/hcsshim)) = v0.8.22
+Provides: bundled(golang(github.com/Microsoft/go_winio)) = v0.5.1
+Provides: bundled(golang(github.com/Microsoft/hcsshim)) = v0.9.2
 Provides: bundled(golang(github.com/miekg/pkcs11)) = v1.0.3
 Provides: bundled(golang(github.com/mistifyio/go_zfs)) = v2.1.2_0.20190413222219_f784269be439+incompatible
-Provides: bundled(golang(github.com/moby/sys/mountinfo)) = v0.4.1
+Provides: bundled(golang(github.com/moby/sys/mountinfo)) = v0.5.0
 Provides: bundled(golang(github.com/moby/term)) = v0.0.0_20210619224110_3f7ff695adc6
 Provides: bundled(golang(github.com/modern_go/concurrent)) = v0.0.0_20180306012644_bacd9c7ef1dd
 Provides: bundled(golang(github.com/modern_go/reflect2)) = v1.0.2
@@ -122,10 +122,10 @@ Provides: bundled(golang(github.com/navidys/tvxwidgets)) = v0.1.0
 Provides: bundled(golang(github.com/navidys/vtterm)) = v0.1.0
 Provides: bundled(golang(github.com/opencontainers/go_digest)) = v1.0.0
 Provides: bundled(golang(github.com/opencontainers/image_spec)) = v1.0.2_0.20210819154149_5ad6f50d6283
-Provides: bundled(golang(github.com/opencontainers/runc)) = v1.0.2
+Provides: bundled(golang(github.com/opencontainers/runc)) = v1.1.0
 Provides: bundled(golang(github.com/opencontainers/runtime_spec)) = v1.0.3_0.20210326190908_1c3f411f0417
 Provides: bundled(golang(github.com/opencontainers/runtime_tools)) = v0.9.0
-Provides: bundled(golang(github.com/opencontainers/selinux)) = v1.9.1
+Provides: bundled(golang(github.com/opencontainers/selinux)) = v1.10.0
 Provides: bundled(golang(github.com/ostreedev/ostree_go)) = v0.0.0_20190702140239_759a8c1ac913
 Provides: bundled(golang(github.com/pkg/errors)) = v0.9.1
 Provides: bundled(golang(github.com/prometheus/client_golang)) = v1.7.1
