@@ -9,8 +9,8 @@
 %endif
 
 %global goipath github.com/containers/podman-tui
-Version: 0.4.0
-%global tag v0.4.0
+Version: 0.5.0
+%global tag v0.5.0
 %gometa
 
 %global goname podman-tui
@@ -70,15 +70,15 @@ Provides: bundled(golang(github.com/containers/common)) = v0.48.0
 Provides: bundled(golang(github.com/containers/image/v5)) = v5.21.1
 Provides: bundled(golang(github.com/containers/libtrust)) = v0.0.0_20200511145503_9c3a6c22cd9a
 Provides: bundled(golang(github.com/containers/ocicrypt)) = v1.1.4
-Provides: bundled(golang(github.com/containers/podman/v4)) = v4.1.0
+Provides: bundled(golang(github.com/containers/podman/v4)) = v4.1.1
 Provides: bundled(golang(github.com/containers/psgo)) = v1.7.2
 Provides: bundled(golang(github.com/containers/storage)) = v1.41.0
-Provides: bundled(golang(github.com/coreos/go_systemd/v22)) = v22.3.2
+Provides: bundled(golang(github.com/coreos/go_systemd/v22)) = v22.3.3_0.20220203105225_a9a7ef127534
 Provides: bundled(golang(github.com/cyphar/filepath_securejoin)) = v0.2.3
 Provides: bundled(golang(github.com/disiqueira/gotree/v3)) = v3.0.2
 Provides: bundled(golang(github.com/docker/distribution)) = v2.8.1+incompatible
 Provides: bundled(golang(github.com/docker/docker_credential_helpers)) = v0.6.4
-Provides: bundled(golang(github.com/docker/docker)) = v20.10.16+incompatible
+Provides: bundled(golang(github.com/docker/docker)) = v20.10.17+incompatible
 Provides: bundled(golang(github.com/docker/go_connections)) = v0.4.1_0.20210727194412_58542c764a11
 Provides: bundled(golang(github.com/docker/go_metrics)) = v0.0.1
 Provides: bundled(golang(github.com/docker/go_units)) = v0.4.0
@@ -106,6 +106,8 @@ Provides: bundled(golang(github.com/klauspost/compress)) = v1.15.4
 Provides: bundled(golang(github.com/klauspost/pgzip)) = v1.2.5
 Provides: bundled(golang(github.com/lucasb_eyer/go_colorful)) = v1.2.0
 Provides: bundled(golang(github.com/manifoldco/promptui)) = v0.9.0
+Provides: bundled(golang(github.com/mattn/go_colorable)) = v0.1.12
+Provides: bundled(golang(github.com/mattn/go_isatty)) = v0.0.14
 Provides: bundled(golang(github.com/mattn/go_runewidth)) = v0.0.13
 Provides: bundled(golang(github.com/mattn/go_shellwords)) = v1.0.12
 Provides: bundled(golang(github.com/matttproud/golang_protobuf_extensions)) = v1.0.2_0.20181231171920_c182affec369
@@ -136,9 +138,9 @@ Provides: bundled(golang(github.com/prometheus/common)) = v0.30.0
 Provides: bundled(golang(github.com/prometheus/procfs)) = v0.7.3
 Provides: bundled(golang(github.com/rivo/tview)) = v0.0.0_20220307222120_9994674d60a8
 Provides: bundled(golang(github.com/rivo/uniseg)) = v0.2.0
-Provides: bundled(golang(github.com/rs/zerolog)) = v1.26.1
+Provides: bundled(golang(github.com/rs/zerolog)) = v1.27.0
 Provides: bundled(golang(github.com/sirupsen/logrus)) = v1.8.1
-Provides: bundled(golang(github.com/spf13/cobra)) = v1.4.0
+Provides: bundled(golang(github.com/spf13/cobra)) = v1.5.0
 Provides: bundled(golang(github.com/spf13/pflag)) = v1.0.5
 Provides: bundled(golang(github.com/stefanberger/go_pkcs11uri)) = v0.0.0_20201008174630_78d3cae3a980
 Provides: bundled(golang(github.com/sylabs/sif/v2)) = v2.7.0
